@@ -16,7 +16,7 @@ function Header() {
                     <div className="d-flex justify-content-center align-items-center">
                         <Link exact="true" to="/">
                             <img src={logo} alt="Logo Movies" className="logoMovies"/>
-                            <h1 className="text-light display-4">Movies Pw</h1>
+                            <h1 className="text-light display-4">Movies</h1>
                         </Link>
                     </div>
                 </div>
