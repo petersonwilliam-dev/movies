@@ -13,6 +13,7 @@ function ShowDetails() {
     const {id, type} = useParams()
     const [content, setContent] = useState(null)
     const [status, setStatus] = useState(0)
+    const [cast, setCast] = useState([])
 
     useEffect(() => {
         axios.get(`http://api.themoviedb.org/3/${type}/${id}?api_key=${APIKey}`)
@@ -23,6 +24,12 @@ function ShowDetails() {
             console.log(err)
             setStatus(err.response.status)
         })
+
+        axios.get(`http://api.themoviedb.org/3/${type}/${id}/credits?api_key=${APIKey}`)
+        .then(response => {
+            setCast(response.data.cast)
+        })
+        .catch(err => console.log(err))
     }, [id])
 
     return (
@@ -30,9 +37,9 @@ function ShowDetails() {
             {content ? (
                 <>
                     {type === "movie" ? (
-                        <ShowMovie movie={content}/>
+                        <ShowMovie movie={content} cast={cast}/>
                     ) : (
-                        <ShowSerie serie={content} />
+                        <ShowSerie serie={content} cast={cast}/>
                     )}
                 </>
             ) : (

@@ -1,7 +1,7 @@
 // CSS
 import './App.css'
 // Modules
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 // Components
 import Home from './pages/home/Home'
 import Search from './pages/search/Search'
@@ -10,6 +10,7 @@ import Container from './layout/container/Container'
 import ContentNotFound from './pages/contentNotFound/ContentNotFound'
 import ShowDetails from './pages/showDetails/ShowDetails'
 import Footer from './components/footer/Footer'
+import Cast from './components/showContent/elements/cast/Cast'
 
 function App() {
 

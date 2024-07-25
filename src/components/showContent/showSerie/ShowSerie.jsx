@@ -1,3 +1,4 @@
+import Cast from "../elements/cast/Cast"
 import Genres from "../elements/genres/Genres"
 import Overview from "../elements/overview/Overview"
 import Producers from "../elements/producers/Producers"
@@ -5,7 +6,7 @@ import Review from "../elements/review/Review"
 import Trailer from "../elements/trailer/Trailer"
 
 
-function ShowSerie({serie}) {
+function ShowSerie({serie, cast}) {
 
     return (
         <div className="showContent">
@@ -36,7 +37,9 @@ function ShowSerie({serie}) {
                 </div>
             </div>
             <Overview overview={serie.overview}/>
+            <Cast cast={cast}/>
             <Trailer type={serie.type} id={serie.id}/>
+            <hr />
             <div className="homepage d-flex justify-content-end">
                 <a href={`${serie.homepage}`} target="_blank"><button className="btn btn-warning">View homepage</button></a>
             </div>

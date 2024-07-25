@@ -5,8 +5,9 @@ import Overview from '../elements/overview/Overview'
 import Trailer from '../elements/trailer/Trailer'
 
 import '../elements/review/Review.css'
+import Cast from '../elements/cast/Cast'
 
-function ShowMovie({movie}) {
+function ShowMovie({movie, cast}) {
 
     return (
         <div className="showContent">
@@ -35,6 +36,7 @@ function ShowMovie({movie}) {
                 </div>
             </div>
             <Overview overview={movie.overview}/>
+            <Cast cast={cast}/>
             <Trailer type={movie.type} id={movie.id}/>
             <hr />
             <div className="homepage d-flex justify-content-end">
